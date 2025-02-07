@@ -1,23 +1,23 @@
 export const markets = {
-    UK: {
-      baseUrl: "https://www.ploom.co.uk/en",
-      cookiesAcceptanceLocator: "button#onetrust-accept-btn-handler",
-      ageVerificationLocator: '//span[contains(text(), " Yes, discover more ")]',
-      shopButtonLocator: '//a[@href="/en/shop"]',
-      allProductsLocator: '//span[@class="aem-button__text"]',
-      productSkuLocator: '//div[@data-sku="ploom-x-advanced"]',
-      addToCartLocator: '//button[@data-testid="pdpAddToProduct"]',
-      cartQuantityLocator: '//input[@class="QuantityInput-module-input-7n5dx"]',
-      basketButtonLocator: '//button[@data-testid="miniCartCheckoutButton"]',
-      itemBasketLocator: '//strong[@data-testid="page-layout-subtitle"]',
-      quantityPlusLocator: '//button[@data-testid="quantityPlus"]',
-      quantityMinusLocator: '//button[@data-testid="quantityMinus"]',
-      removeItemLocator: '//span[text()="Remove Item"]',
-      confirmRemovingLocator:
-        '//button[@data-testid="remove-item-submit-button"]',
-      emptyCartLocator:
-        '//*[contains(text(), "You have no items in your shopping cart at the moment.")]',
-    },
+    // UK: {
+    //   baseUrl: "https://www.ploom.co.uk/en",
+    //   cookiesAcceptanceLocator: "button#onetrust-accept-btn-handler",
+    //   ageVerificationLocator: '//span[contains(text(), " Yes, discover more ")]',
+    //   shopButtonLocator: '//a[@href="/en/shop"]',
+    //   allProductsLocator: '//span[@class="aem-button__text"]',
+    //   productSkuLocator: '//div[@data-sku="ploom-x-advanced"]',
+    //   addToCartLocator: '//button[@data-testid="pdpAddToProduct"]',
+    //   cartQuantityLocator: '//input[@class="QuantityInput-module-input-7n5dx"]',
+    //   basketButtonLocator: '//button[@data-testid="miniCartCheckoutButton"]',
+    //   itemBasketLocator: '//strong[@data-testid="page-layout-subtitle"]',
+    //   quantityPlusLocator: '//button[@data-testid="quantityPlus"]',
+    //   quantityMinusLocator: '//button[@data-testid="quantityMinus"]',
+    //   removeItemLocator: '//span[text()="Remove Item"]',
+    //   confirmRemovingLocator:
+    //     '//button[@data-testid="remove-item-submit-button"]',
+    //   emptyCartLocator:
+    //     '//*[contains(text(), "You have no items in your shopping cart at the moment.")]',
+    // },
     PL: {
       baseUrl: "https://www.ploom.pl/pl",
       cookiesAcceptanceLocator: "button#onetrust-accept-btn-handler",
