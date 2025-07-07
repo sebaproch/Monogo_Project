@@ -16,6 +16,9 @@ export class ProductPage extends BasePage {
   }
 
   async buyNow(locator: string) {
-    await this.page.locator(locator).first().click();
+    //await this.page.locator(locator).first().click();
+    await this.page.locator(locator).hover();
+    await this.page.waitForSelector(locator, { state: 'visible' });
+    await this.page.locator(locator).click();
   }
 }
