@@ -55,10 +55,12 @@ for (const market in markets) {
     expect(
       await cartPage.verifyCartQuantity(locators.cartQuantityLocator, 1)
     ).toBeTruthy();
+    await page.waitForTimeout(2000)
     await cartPage.removeItem(
       locators.removeItemLocator,
       locators.confirmRemovingLocator
     );
+    await page.waitForTimeout(2000)
     const emptyCartText = await page.innerText(locators.emptyCartLocator);
     expect(emptyCartText).toEqual(
       market === "UK"
