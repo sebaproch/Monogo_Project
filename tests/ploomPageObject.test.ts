@@ -6,10 +6,6 @@ import { MainPage } from "../pages/MainPage";
 import { ProductPage } from "../pages/ProductPage";
 import { CartPage } from "../pages/CartPage";
 import { ValidationPage } from "../pages/ValidationPage";
-//npx playwright test --grep "Group1"
-//npx playwright test --trace on
-//npx playwright test --debug
-
 
 test.describe('Group1', ()=> {
 for (const market in markets) {
@@ -23,15 +19,13 @@ for (const market in markets) {
     const cartPage = new CartPage(page);
 
     await cookiesPage.navigate(locators.baseUrl);
-    await page.waitForLoadState();
+    await page.waitForLoadState;
+    await page.waitForTimeout(3000)
     await cookiesPage.acceptCookies(locators.cookiesAcceptanceLocator);
-    await page.waitForLoadState('networkidle');
-
+    
     if (await page.locator(locators.ageVerificationLocator).isVisible()) {
       await page.locator(locators.ageVerificationLocator).click();
     }
-    await page.waitForSelector(locators.ageVerificationLocator, { state: 'hidden' }).catch(() => {});
-    //await page.waitForLoadState();
 
     await mainPage.goToShop(locators.shopButtonLocator);
     if (market == "UK") {
@@ -73,19 +67,22 @@ for (const market in markets) {
     );
   });
 }
+
+test.describe('Group2', ()=> {
 test("Verifying broken links", async ({ page }) => {
   const validationPage = new ValidationPage(page);
   await validationPage.navigate("https://www.ploom.co.uk/en");
   const failures = await validationPage.checkBrokenLinks("a");
-  //expect(failures.length).toBe(0);
-  await expect.soft(failures.length).toBe(0);
+  expect.soft(failures.length).toBe(0);
+});
 });
 
+test.describe('Group3', ()=> {
 test("Verifying broken images", async ({ page }) => {
   const validationPage = new ValidationPage(page);
   await validationPage.navigate("https://www.ploom.co.uk/en");
   const failures = await validationPage.checkBrokenImages("img");
-  // expect(failures.length).toBe(0);
-  await expect.soft(failures.length).toBe(0);
+  expect.soft(failures.length).toBe(0);
+});
 });
 });

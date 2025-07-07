@@ -31,18 +31,12 @@ export class CartPage extends BasePage {
     await this.page.locator(itemBasketLocator);
     const itemBasketText = await this.page.innerText(itemBasketLocator);
     let itemBasketIntValue
-    console.log(itemBasketText)
-    console.log(itemBasketText.length)
-    console.log("@@@@@@@@@@@@@@@@@@")
     if (itemBasketText.length>1){
       itemBasketIntValue = parseInt(itemBasketText.split(" ")[0]);
-      console.log( itemBasketIntValue)
-      console.log("^^^^^^^^^^^^^^^^^^^")
     }else{
       itemBasketIntValue = await this.page.locator(itemBasketLocator).inputValue()
       itemBasketIntValue = parseInt(itemBasketIntValue);
     }
-    //const itemBasketIntValue = await this.page.locator(itemBasketLocator).inputValue()
     return itemBasketIntValue;
   }
 
